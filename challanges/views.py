@@ -1,4 +1,4 @@
-from django.http import HttpResponse, HttpResponseNotFound, HttpResponseRedirect
+from django.http import HttpResponse, HttpResponseNotFound, HttpResponseRedirect, Http404
 from django.urls import reverse
 from django.shortcuts import render
 
@@ -55,4 +55,6 @@ def monthly_challenges(request, month):
             "month_name": month  # THIS IS RECOMMENDED TO PUT ANY STYLE LOGIC IN VIEWS… SEE TEMPLATES FORMATTING
         })
     except:
-        return HttpResponseNotFound("THIS MONTH IS NOT SUPPORTED")
+
+        raise Http404() # this automatically refers to 4.4.html in templates works only on deployed app
+        # instead, need to be changed in settings
