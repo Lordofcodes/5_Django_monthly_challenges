@@ -1,6 +1,13 @@
-{% extends "base.html" %} {# meke sure you define: BASE_DIR / "templates" on settings.py #}
+{% extends 'base.html' %} {# meke sure you define: BASE_DIR / "templates" on settings.py #}
+{% load static %}  {# only plugin #}
 
-    {% block page_title %} All challenges lala {% endblock %}
+{% block css_files %}
+    <link rel="stylesheet" href="{% static "challenges/challenges.css" %}">
+    <link rel="stylesheet" href="{% static "challenges/includes/header.css" %}">
+{% endblock %}
+
+
+{% block page_title %} All challenges CHECK  {% endblock %}
 
 {% block content %}
         {% include "challenges/includes/header.html" %}

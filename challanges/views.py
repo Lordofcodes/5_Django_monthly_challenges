@@ -6,17 +6,17 @@ from django.shortcuts import render
 
 
 monthly_challenges_dict = {
-    "january": "Keep life & work balance.. fluent in DG",
+    "january": "Keep life & work balance.. ",
     "february": "0 SHIT FOOD AND FAST FOOD TRAINING 2X/PER WEEK",
-    "march": "regular r-vu LIFE & WORK BALANCE",
+    "march": "WOLK TO WORK 4 TIMES PWE WEEK",
     "april": "Travel to Italy",
     "may": "regular training GUM AND DIET",
     "june": "City Break UKRAINE",
-    "july": "SOPOT 2022 ONLY 4 DAYS",
+    "july": "SOPOT 2022",
     "august": "Travel to Scwizrland... 1 week holiday",
-    "september": "PYTHONT RAINING EVERYDAY 1 HOUR",
+    "september": "PYTHONT TRAINING EVERYDAY 1 HOUR",
     "october": "REFURBISHMENT OF FLOAT  ",
-    "november": "NEW WORK   ",
+    "november": None,
     "december": "CHILL"
 }
 

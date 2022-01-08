@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load static %}
 
 
 {% block page_title %}
@@ -6,12 +7,20 @@
 {% endblock %}
 
 
+{% block css_files %}
+    <link rel="stylesheet" href="{% static "challenges/challenge_page.css" %}">
+    <link rel="stylesheet" href="{% static "challenges/includes/header.css" %}">
+{% endblock %}
 
 {% block content %}
     {% include "challenges/includes/header.html" %}
 
 <h1>This is {{ month_name | title }} CHALLENGE: </h1>
-<h2>{{ text }}</h2> <!-- INJECTION OF DICTIONARY KEYS -->
+        {% if text is not none %}
+        <h2>{{ text }}</h2> <!-- INJECTION OF DICTIONARY KEYS -->
+        {% else %}
+        <p>There is no challenge for this month</p>
+    {% endif %}
 {% endblock %}
 
 

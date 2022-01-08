@@ -1,3 +1,4 @@
+{% load static %}
 <!doctype html>
 <html lang="en">
 <head>
@@ -5,10 +6,15 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title> {% block page_title %} My challenges {% endblock %} </title> <!-- name my chalenges used in case of no parameter-->
+    <title> {% block page_title %} My challenges {% endblock %} </title>
+    <!-- name my challenges used in case of no parameter-->
+<link rel="stylesheet" href="{% static "styles.css" %}">
+{% block css_files %}
+
+{% endblock %}
 </head>
 <body>
-<h1>JUST FOR CHECK</h1>
+<h1>JUST FOR CHECK it works</h1>
 {% block content %} Block_Space {% endblock %}
 </body>
 </html>
