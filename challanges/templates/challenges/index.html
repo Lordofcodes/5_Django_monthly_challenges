@@ -1,20 +1,24 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title> ALL CHALLENGES </title>
-</head>
-<body>
+{% extends 'base.html' %} {# meke sure you define: BASE_DIR / "templates" on settings.py #}
+{% load static %}  {# only plugin #}
+
+{% block css_files %}
+    <link rel="stylesheet" href="{% static "challenges/challenges.css" %}">
+    <link rel="stylesheet" href="{% static "challenges/includes/header.css" %}">
+{% endblock %}
+
+
+{% block page_title %} All challenges CHECK  {% endblock %}
+
+{% block content %}
+        {% include "challenges/includes/header.html" %}
     <ul>
         {% for month in months %} <!-- -->
-        <li><a href="/challanges/{{ month }}">{{ month|title }}</a></li> <!-- INJECTION OF DICTIONARY KEYS -->
+        <li><a href="{% url "month-challenge" month %}">{{ month|title }}</a></li> <!-- INJECTION OF DICTIONARY KEYS -->
         {% endfor %}
     </ul>
-</body>
-</html>
+{% endblock %}
+
+
 
 
 {#TIPS: USE FILTERS DROM DJANGO TEMPLATES TO APPLY FORMATING#}

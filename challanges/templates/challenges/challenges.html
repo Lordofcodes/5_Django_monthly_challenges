@@ -1,17 +1,28 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>{{ month_name | title}} CHALLENGE</title>
-</head>
-<body>
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block page_title %}
+{{ month_name | title}}
+{% endblock %}
+
+
+{% block css_files %}
+    <link rel="stylesheet" href="{% static "challenges/challenge_page.css" %}">
+    <link rel="stylesheet" href="{% static "challenges/includes/header.css" %}">
+{% endblock %}
+
+{% block content %}
+    {% include "challenges/includes/header.html" %}
+
 <h1>This is {{ month_name | title }} CHALLENGE: </h1>
-<h2>{{ text }}</h2> <!-- INJECTION OF DICTIONARY KEYS -->
-</body>
-</html>
+        {% if text is not none %}
+        <h2>{{ text }}</h2> <!-- INJECTION OF DICTIONARY KEYS -->
+        {% else %}
+        <p>There is no challenge for this month</p>
+    {% endif %}
+{% endblock %}
+
 
 
 {#TIPS: USE FILTERS DROM DJANGO TEMPLATES TO APPLY FORMATING#}
